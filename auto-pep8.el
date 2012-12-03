@@ -87,7 +87,7 @@
 (defun auto-pep8--pep8()
   (let ((pep-proc (get-buffer-process python-pep8-last-buffer)))
     (when pep-proc
-      (interrupt-process pep-proc)))
+      (delete-process pep-proc)))
 
   (when (buffer-file-name)
     (let* ((python-pep8-options (append python-pep8-options
